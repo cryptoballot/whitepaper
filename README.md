@@ -28,7 +28,7 @@ VotersList has the following primary functions:
 4. Allows VotersList Auditors to verify the VotersList Document and all voters public keys on file. 
 
 
-### VotersList threat model
+#### VotersList threat model
 
 1. An attacker has an arbitrary amount of computing power equivilent to the computer power available to a large nation state. 
 
