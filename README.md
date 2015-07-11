@@ -44,7 +44,7 @@ VotersList has the following primary functions:
 
 ### VotersList WorkFlow
 
-Before voting:
+*Before voting*
 
 1. System administrators upload Administrator, Agent and Autitor public keys to the VotersList server as part of the configuration of the server.
 2. The VotersList server is booted and the RESTful service is online. 
@@ -52,7 +52,7 @@ Before voting:
 4. The VotersList Agent interacts with voters to verify voter identity. Once the voter's identity has been verified, the Agent signs the voter's pubic key together with their voter ID with the Agent's trusted key. The exact nature of this interaction will vary depending on the polity. Examples include a human verifying identity information in-person, or a web application that voters interface with digitally. Generally the Agent would be expected to keep good records so an audit can be conducted of it's acivities. 
 5. The voter PUTs their signed public key and voter ID, registering with the VotersList server. 
 
-After Voting:
+*After voting*
 
 1. Administrators, Agents, and Auditors verify with each other that the public keys registered on the VotersList server are correct and accounted for. 
 2. Auditors verify that all Fulfilled Signature Request on file with the Election Clerk are properly signed by a voters key and that each voter's key is signed by a valid Agent key. 
