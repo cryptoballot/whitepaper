@@ -76,7 +76,6 @@ The VotersListDocument is a utf8 encoded file in the following format:
 <signature>
 ```
 
-Where:
   - `<voters-list-document-id>` is a base64 encoded SHA256 hash of `<array-of-voters-information>`
 
   - `<admin-public-key>` is a base64 encoded public-key corresponding to a single VotersList Administrator. 
@@ -91,7 +90,6 @@ Where:
   <voter-data>
   ```
   
-  Where:
   - `<voter-identification>` is a unique string for this voter. This string should be randomly generated and unpredictable.
 
   - `<voter-data>` is a 1-line seperated (`\n`) list of key value data with the format of `<key>=<value>`.
