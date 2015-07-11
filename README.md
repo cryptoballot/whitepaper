@@ -86,11 +86,11 @@ Where:
 
   <voter-data>
   ```
-
+  
   Where:
-    - `<voter-identification>` is a unique string for this voter. This string should be randomly generated and unpredictable.
+  - `<voter-identification>` is a unique string for this voter. This string should be randomly generated and unpredictable.
 
-    - `<voter-data>` is a 1-line seperated (`\n`) list of key value data with the format of `<key>=<value>`.
+  - `<voter-data>` is a 1-line seperated (`\n`) list of key value data with the format of `<key>=<value>`.
 
   - `<admin-public-key>` is a base64 encoded public-key corresponding to a single VotersList Administrator. 
 
