@@ -94,7 +94,7 @@ The VotersListDocument is a utf8 encoded file in the following format:
 
   - `<voter-data>` is a 1-line seperated (`\n`) list of key value data with the format of `<key>=<value>`.
 
-#### Service Paths
+#### VotersList Service Paths
 
 - `/admins`  View Administrators along with their public keys and roles (auditor, administrator, agent)
 - `/list/<voters-list-id>` View a full VoterList Document. New Documents are PUT to this path by Administrators. 
