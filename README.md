@@ -79,6 +79,10 @@ The VotersListDocument is a utf8 encoded file in the following format:
 Where:
   - `<voters-list-document-id>` is a base64 encoded SHA256 hash of `<array-of-voters-information>`
 
+  - `<admin-public-key>` is a base64 encoded public-key corresponding to a single VotersList Administrator. 
+
+  - `<signature>` is an RSA signature of the document up to this point, excluding the 2-line seperator ('\n\n') before `<signature>`. This signature is signed using private-key associated with `<admin-public-key>`. 
+
   - `<array-of-voters-information>` is a 2-line seperated (`\n\n`) concactenation of VoterRecords. A VoterRecord has the following format:
 
   ```
@@ -91,10 +95,6 @@ Where:
   - `<voter-identification>` is a unique string for this voter. This string should be randomly generated and unpredictable.
 
   - `<voter-data>` is a 1-line seperated (`\n`) list of key value data with the format of `<key>=<value>`.
-
-  - `<admin-public-key>` is a base64 encoded public-key corresponding to a single VotersList Administrator. 
-
-  - `<signature>` is an RSA signature of the document up to this point, excluding the 2-line seperator ('\n\n') before `<signature>`. This signature is signed using private-key associated with `<admin-public-key>`. 
 
 ### Service Paths
 
