@@ -1,21 +1,19 @@
 # CryptoBallot Whitepaper - DRAFT - Work In Progress
 
-Definitions
-===========
+##Definitions
 
-VotersList:  Web application for managing voter information and public keys.
+ - VotersList:  Web application for managing voter information and public keys.
 
-VotersList Document: A document that contains all voter information, with the exception of public keys. This document would generally be derived from a polity's voters list. 
+ - VotersList Document: A document that contains all voter information, with the exception of public keys. This document would generally be derived from a polity's voters list. 
 
-VotersList Agent: A trusted agent that is reponsible for certifying a voter's identity and their associated public key
+ - VotersList Agent: A trusted agent that is reponsible for certifying a voter's identity and their associated public key
 
-VotersList Auditor: A semi-trusted agent that can view the VotersList and associated public keys. Used to do a full verification of the CrytoBallot voting protocol. Generally these would be idependent volunteers who would have clearence to view the full voters list. 
+ - VotersList Auditor: A semi-trusted agent that can view the VotersList and associated public keys. Used to do a full verification of the CrytoBallot voting protocol. Generally these would be idependent volunteers who would have clearence to view the full voters list. 
 
-VotersList Administrator: A semi-trusted agent that is responsible for uploading and certifying the VotersList Document. This agent would generally be the Cheif Electoral Officer responsible for the election. 
+ - VotersList Administrator: A semi-trusted agent that is responsible for uploading and certifying the VotersList Document. This agent would generally be the Cheif Electoral Officer responsible for the election. 
 
 
-VotersList
-==========
+##VotersList
 
 The CrytoBallot VotersList is a RESTful web application for managing, distributing, and tamperproofing voter identity information. 
 
@@ -30,24 +28,21 @@ VotersList has the following primary functions:
 4. Allows VotersList Auditors to verify the VotersList Document and all voters public keys on file. 
 
 
-VotersList threat model
------------------------
+### VotersList threat model
 
 1. An attacker has an arbitrary amount of computing power equivilent to the computer power available to a large nation state. 
 
 2. An attacker has complete control over the computer running the VotersList application and has complete control over VotersList Administrators' computers, but does not have control over VotersList Agent computers, VotersList Auditor computers, or voter's computers. 
 
 
-VotersList security guaruntees
-------------------------------
+### VotersList security guaruntees
 
 1. An attacker can spoil a VotersList Document, but cannot modify it without VotersList Auditors noticing. Any CryptoBallot election based on a tempered VotersList Document would fail verification.
 
 2. An attacker can spoil a Voter's public key on file, but cannot modify it without without VotersList Auditors or voters noticing. Any CryptoBallot election with tampered public keys would fail verification.
 
 
-VotersList WorkFlow
--------------------
+### VotersList WorkFlow
 
 Before voting:
 
@@ -65,8 +60,7 @@ After Voting:
 4. Auditors publically communicate the results of their audit. 
 
 
-The VotersListDocument
-----------------------
+### The VotersListDocument
 
 The VotersListDocument is a utf8 encoded file in the following format:
 
@@ -102,9 +96,8 @@ D. `<admin-public-key>` is a base64 encoded public-key corresponding to a single
 
 C. `<signature>` is an RSA signature of the document up to this point, excluding the 2-line seperator ('\n\n') before `<signature>`. This signature is signed using private-key associated with `<admin-public-key>`. 
 
-Service Paths
--------------
+### Service Paths
 
-- /admins : View Administrators along with their public keys and roles (auditor, administrator, agent)
-- /list/<voters-list-id>: View a full VoterList Document. New Documents are PUT to this path by Administrators. 
-- /list/<voters-list-id/<voter-id>: View a full voter record, including their public key. This path is used by voters to POST their public key records.
+- `/admins`  View Administrators along with their public keys and roles (auditor, administrator, agent)
+- `/list/<voters-list-id>` View a full VoterList Document. New Documents are PUT to this path by Administrators. 
+- `/list/<voters-list-id/<voter-id>` View a full voter record, including their public key. This path is used by voters to POST their public key records.
