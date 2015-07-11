@@ -35,14 +35,14 @@ VotersList has the following primary functions:
 2. An attacker has complete control over the computer running the VotersList application and has complete control over VotersList Administrators' computers, but does not have control over VotersList Agent computers, VotersList Auditor computers, or voter's computers. 
 
 
-### VotersList security guaruntees
+#### VotersList security guaruntees
 
 1. An attacker can spoil a VotersList Document, but cannot modify it without VotersList Auditors noticing. Any CryptoBallot election based on a tempered VotersList Document would fail verification.
 
 2. An attacker can spoil a Voter's public key on file, but cannot modify it without without VotersList Auditors or voters noticing. Any CryptoBallot election with tampered public keys would fail verification.
 
 
-### VotersList WorkFlow
+#### VotersList WorkFlow
 
 *Before voting*
 
@@ -60,7 +60,7 @@ VotersList has the following primary functions:
 4. Auditors publically communicate the results of their audit. 
 
 
-### The VotersListDocument
+#### The VotersListDocument
 
 The VotersListDocument is a utf8 encoded file in the following format:
 
@@ -94,7 +94,7 @@ The VotersListDocument is a utf8 encoded file in the following format:
 
   - `<voter-data>` is a 1-line seperated (`\n`) list of key value data with the format of `<key>=<value>`.
 
-### Service Paths
+#### Service Paths
 
 - `/admins`  View Administrators along with their public keys and roles (auditor, administrator, agent)
 - `/list/<voters-list-id>` View a full VoterList Document. New Documents are PUT to this path by Administrators. 
